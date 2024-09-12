@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
-import { Inter, Poppins } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
-const inter = Poppins({ 
-  weight:["300","400","500","600","700","800"],
-  style:["normal"],
-  subsets:["latin"]
+import { Footer } from "@/Components/footer";
+import { Navbar } from "@/Components/navbar";
+
+const inter = Poppins({
+  weight: ["300", "400", "500", "600", "700", "800"],
+  style: ["normal"],
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
@@ -20,17 +23,20 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link 
-          rel="stylesheet" 
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" 
-          integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" 
-          crossOrigin="anonymous" 
-          referrerPolicy="no-referrer" 
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+          integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+          crossOrigin="anonymous"
+          referrerPolicy="no-referrer"
         />
-      <link rel="icon" href="/Beach.svg"></link>
+        <link rel="icon" href="/Beach.svg"></link>
       </head>
+
       <body className={inter.className}>
+        <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

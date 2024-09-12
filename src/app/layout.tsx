@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import { Footer } from "@/Components/footer";
-import { Navbar } from "@/Components/navbar";
+
 
 const inter = Poppins({
   weight: ["300", "400", "500", "600", "700", "800"],
@@ -30,11 +30,11 @@ export default function RootLayout({
           crossOrigin="anonymous"
           referrerPolicy="no-referrer"
         />
-        <link rel="icon" href="/Beach.svg"></link>
+        <link rel="icon" href="/img/Beach.svg"></link>
       </head>
 
       <body className={inter.className}>
-        <Navbar />
+        {/* <Navbar /> */}
         {children}
         <Footer />
       </body>

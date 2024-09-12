@@ -2,32 +2,56 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
+:root{
+  --margin:70px auto;
+  --max-width:1200px;
+  --max-width-sm:10000px;
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
+  --rgb:255,218,50;
+  --primary-rgb: 123,188,176;
+  --font-color: 73,85,96;
+  --dark-color:28,43,56;
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+  --main:rgb(var(--rgb));
+  --font_color:rgb(var(--font-color));
+  --primary:rgb(var(--primary-rgb));
+  --dark_color:rgb(var(--dark-color))
 }
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+body{
+  width: 100%;
+  
+}
+::-webkit-scrollbar{
+  display: none;
+}
+::webkit-calender-piker-indicator{
+  cursor: pointer;
+}
+::placeholder, input[type="date"]{
+  color: var(--font_color);
+}
+a{
+  color: inherit;
+  text-decoration: none;
+}
+ul{
+  list-style: none;
+}
+button,input{
+  border: none;
+  outline: none;
+}
+/* img{
+  display: block;
+  width: 100%;
+  height:100% ;
+  object-fit: cover;
+  object-position: center;
+} */

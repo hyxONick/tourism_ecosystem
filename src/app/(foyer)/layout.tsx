@@ -1,5 +1,5 @@
 import { Footer } from "@/components/footer";
-import { Navbar } from "@/components/navbar";
+import { Navbar } from "@/Components/navbar/navbar";
 import { FC } from "react";
 
 interface FoyerLayoutProps {

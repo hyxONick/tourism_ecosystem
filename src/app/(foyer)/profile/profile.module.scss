@@ -1,0 +1,171 @@
+.profile-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-header {
+    width: 100vw;
+    padding: 1rem;   
+    text-align: left;
+    font-family: Volkhov;
+    font-size: 22px;
+    font-weight: 700;
+    color: #1C2B38;
+}
+
+.profile-subheader {
+    width: 100vw;
+    padding: 1rem;
+    text-align: left;
+    font-family: Mulish;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 18.83px;
+    color: #778088;
+}
+
+.profile-content {
+    flex: 1;
+    width: 100%;
+    display: flex;
+}
+
+.profile-avatar {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.profile-avatar img {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: none;
+    box-shadow: none;
+}
+
+.profile-avatar .name p {
+    width: auto;
+    height: auto;
+    font-family: Mulish;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28px;
+    text-align: center;
+    color: #1C2B38;
+}
+
+.profile-avatar .details {
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* Adjust the spacing between items */
+    margin-bottom: 1rem; /* Optional: Add space below the details section */
+}
+
+.profile-avatar .details img {
+    width: 16px; /* Adjust size as needed */
+    height: 16px; /* Adjust size as needed */
+}
+
+.profile-avatar .details p {
+    font-family: Mulish;
+    font-size: 14px;
+    font-weight: 600;
+    color: #495560;
+    margin: 0;
+}
+
+.profile-menu {
+    flex: 1;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-item {
+    width: 301px; /* 根据设计调整宽度 */
+    height: 60px; /* 根据设计调整高度 */
+    background-color: #fff; /* 默认背景颜色 */
+    margin: 0.5rem 0;
+    font-family: Mulish;
+    font-size: 16px;
+    font-weight: 600;
+    color: #495560;
+    line-height: 60px; /* 垂直居中 */
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.3s; /* 添加平滑过渡效果 */
+    border-radius: 4px; /* 圆角样式 */
+    padding: 0 1rem; /* 添加内边距 */
+}
+
+.menu-item.active {
+    background-color: #7BBCB0; /* 激活状态的背景颜色 */
+    color: #fff; /* 激活状态的文字颜色 */
+}
+
+.profile-information {
+    flex: 1;
+    padding: 1rem;
+}
+
+.profile-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-form label {
+    margin: 0.5rem 0;
+    font-family: Mulish;
+    font-size: 15px;
+    font-weight: 700;
+    color: #1C2B38;
+}
+
+.profile-form input {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: Mulish;
+    font-size: 15px;
+    font-weight: 600;
+    color: #495560;
+}
+
+.profile-form button {
+    width: 280px; /* 固定宽度 */
+    height: 54px; /* 固定高度 */
+    padding: 14px 80px; /* 内边距 */
+    background-color: #7BBCB0; /* 背景颜色 */
+    color: #fff; /* 文字颜色 */
+    border: none; /* 去掉边框 */
+    border-radius: 3px 0 0 0; /* 圆角样式 */
+    font-family: Mulish; /* 字体 */
+    font-size: 15px; /* 字体大小 */
+    font-weight: 700; /* 字体粗细 */
+    text-align: center; /* 文字居中 */
+    line-height: 18.83px; /* 行高 */
+    cursor: pointer; /* 鼠标悬停时显示手型 */
+    margin: 0.5rem 0;
+}
+
+.profile-information .personalInformation p,
+.profile-information .security p {
+    font-family: Mulish;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 18px;
+    text-align: left;
+    color: #1C2B38;
+    margin: 0.5rem 0;
+}
+

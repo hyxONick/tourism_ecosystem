@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  width: 100vw;
+  background-color: bisque;
+  padding: 20px 30px;
+  justify-content: space-between;
+}
+
+.nav-links {
+  display: flex;
+  gap: 15px;
+}

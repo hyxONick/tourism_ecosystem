@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 import styles from "./profile.module.scss";
+import { Avatar } from './_components/avatar/avatar';
+import { Button } from 'antd';
 
 const ProfilePage = () => {
   const [selectedMenu, setSelectedMenu] = useState<string | null>(null);
@@ -17,16 +19,7 @@ const ProfilePage = () => {
 
       <div className={styles["profile-content"]}>
         <div className={styles["profile-avatar"]}>
-          <img src="/img/avatar.png" alt="avatar" />
-          <div className={styles["name"]}>
-            <p>Masum Rana</p>
-          </div>
-          <div className={styles["details"]}>
-            <img src="/img/Vector.svg" alt="Location Icon" />
-            <p>Gothenburg</p>
-            <img src="/img/fe_birthday-cake.svg" alt="Birthday Icon" />
-            <p>15th February</p>
-          </div>
+          <Avatar />
           <div className={styles["profile-menu"]}>
             <p
               className={`${styles["menu-item"]} ${selectedMenu === 'profile' ? styles["active"] : ''}`}
@@ -85,7 +78,8 @@ const ProfilePage = () => {
             <label htmlFor="confirm-password">Confirm Password</label>
             <input id="confirm-password" type="password" defaultValue="********" />
 
-            <button type="button">Save</button>
+            {/* <button type="button">Save</button> */}
+            <Button>Save</Button>
           </form>
         </div>
       </div>

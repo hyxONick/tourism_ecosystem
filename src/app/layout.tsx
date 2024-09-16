@@ -31,11 +31,7 @@ export default function RootLayout({
         <link rel="icon" href="/img/Beach.svg"></link>
       </head>
 
-      <body className={inter.className}>
-        {/* <Navbar /> */}
-        {children}
-        {/* <Footer /> */}
-      </body>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }

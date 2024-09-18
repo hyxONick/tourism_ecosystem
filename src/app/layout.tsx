@@ -28,11 +28,11 @@ export default function RootLayout({
           crossOrigin="anonymous"
           referrerPolicy="no-referrer"
         />
-        <link rel="icon" href="/img/Beach.svg"></link>
+        <link rel="icon" href="/img/Airplane.jpg"></link>
       </head>
 
       <body className={inter.className}>
-        {/* <Navbar /> */}
+  
         {children}
         {/* <Footer /> */}
       </body>

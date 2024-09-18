@@ -1,0 +1,172 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .explore {
+    display: flex;
+    position: relative;
+    margin-top: 80px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 40px;
+    p {
+      margin-top: 10px;
+      font-size: 15px;
+      font-weight: 100;
+      text-align: center;
+      color: #778088;
+    }
+  }
+  .buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 70px;
+    gap: 50px;
+    width: 100%;
+
+    .btn {
+      display: flex;
+      width: 130px;
+      height: 44px;
+      border-radius: 30px;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #7bbcb0;
+      background-color: transparent;
+      transition: background-color 0.3s;
+    }
+
+    .selected {
+      background-color: #7bbcb0;
+    }
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    width: 100%;
+
+    img {
+      padding: 0 300px;
+      width: 100%;
+
+      height: 500px;
+    }
+
+    .city {
+      display: flex;
+      background-color: #f9fdff;
+      height: 275px;
+      align-items: center;
+
+      max-width: 1110px;
+      padding: 30px;
+      box-shadow: 0 4px 15px rgba(123, 188, 176, 0.5);
+      position: relative;
+      margin-top: -80px;
+
+      .cityName {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 30px;
+        font-size: 40px;
+        padding: 20px;
+        width: 800px;
+        p {
+          margin-bottom: 20px;
+        }
+        .cityDescription {
+          font-size: 18px;
+          color: #778088;
+        }
+      }
+
+      .tag {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 10px;
+
+        .tagItem {
+          display: flex;
+          gap: 5px;
+
+          align-items: center;
+          justify-content: center;
+          width: calc(50% - 10px);
+          box-shadow: 0 4px 15px rgba(153, 153, 153, 0.5);
+
+          height: 40px;
+          font-size: 14px;
+          color: #333;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1500px) {
+    .card {
+      img {
+        padding: 0 20px;
+        width: 1200px;
+        height: 500px;
+      }
+      .city {
+        display: none;
+      }
+    }
+  }
+  @media (max-width: 1200px) {
+    .card {
+      img {
+        padding: 0 20px;
+        width: 1000px;
+        height: 500px;
+      }
+      .city {
+        display: none;
+      }
+    }
+  }
+  @media (max-width: 900px) {
+    .card {
+      img {
+        padding: 0 20px;
+        width: 800px;
+        height: 500px;
+      }
+      .city {
+        display: none;
+      }
+    }
+  }
+  @media (max-width: 576px) {
+    .explore {
+      font-size: 30px;
+    }
+    .buttons {
+      gap: 5px;
+      font-size: 15px;
+    }
+    .card {
+      img {
+        padding: 0 20px;
+        width: 500px;
+        height: 500px;
+      }
+      .city {
+        display: none;
+      }
+    }
+  }
+}

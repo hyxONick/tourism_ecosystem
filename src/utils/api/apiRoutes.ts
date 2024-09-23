@@ -35,5 +35,8 @@ export interface ApiRoute {
             search: { method: 'get', endpoint: '/search' } as ApiRoute,
           }        
     },
+    weather: {
+        weatherInfo:  { method: 'get', endpoint: '/{cityName}' } as ApiRoute,
+    }
   };
   

@@ -69,18 +69,21 @@ const apiRequest = <T>(
       search: (searchTerm: string) => apiRequest<any>('tourist', 'SceneryInfo', API_ROUTES.tourist.sceneryInfo.search, { searchTerm }),
     },
     touristInfo: {
-        fetchAll: () => apiRequest<any>('tourist', 'touristInfo', API_ROUTES.tourist.touristInfo.fetchAll),
-        getById: (id: number) => apiRequest<any>('tourist', 'touristInfo', API_ROUTES.tourist.touristInfo.getById, { id }),
-        create: (newTouristInfo: any) => apiRequest<any>('tourist', 'touristInfo', API_ROUTES.tourist.touristInfo.create, {}, newTouristInfo),
-        update: (id: number, updatedTouristInfo: any) => apiRequest<any>('tourist', 'touristInfo', API_ROUTES.tourist.touristInfo.update, { id }, updatedTouristInfo),
-        delete: (id: number) => apiRequest<any>('tourist', 'touristInfo', API_ROUTES.tourist.touristInfo.delete, { id }),
-      },
+      fetchAll: () => apiRequest<any>('tourist', 'TouristInfo', API_ROUTES.tourist.touristInfo.fetchAll),
+      getById: (id: number) => apiRequest<any>('tourist', 'TouristInfo', API_ROUTES.tourist.touristInfo.getById, { id }),
+      create: (newTouristInfo: any) => apiRequest<any>('tourist', 'TouristInfo', API_ROUTES.tourist.touristInfo.create, {}, newTouristInfo),
+      update: (id: number, updatedTouristInfo: any) => apiRequest<any>('tourist', 'TouristInfo', API_ROUTES.tourist.touristInfo.update, { id }, updatedTouristInfo),
+      delete: (id: number) => apiRequest<any>('tourist', 'TouristInfo', API_ROUTES.tourist.touristInfo.delete, { id }),
+    },
     touristOrderInfo: {
-        fetchAll: () => apiRequest<any>('tourist', 'touristOrderInfo', API_ROUTES.tourist.touristOrderInfo.fetchAll),
-        getById: (id: number) => apiRequest<any>('tourist', 'touristOrderInfo', API_ROUTES.tourist.touristOrderInfo.getById, { id }),
-        create: (newOrder: any) => apiRequest<any>('tourist', 'touristOrderInfo', API_ROUTES.tourist.touristOrderInfo.create, {}, newOrder),
-        update: (id: number, updatedOrder: any) => apiRequest<any>('tourist', 'touristOrderInfo', API_ROUTES.tourist.touristOrderInfo.update, { id }, updatedOrder),
-        delete: (id: number) => apiRequest<any>('tourist', 'touristOrderInfo', API_ROUTES.tourist.touristOrderInfo.delete, { id }),
-        search: (searchTerm: string) => apiRequest<any>('tourist', 'touristOrderInfo', API_ROUTES.tourist.touristOrderInfo.search, { searchTerm }),
-      },
+      fetchAll: () => apiRequest<any>('tourist', 'TouristOrderInfo', API_ROUTES.tourist.touristOrderInfo.fetchAll),
+      getById: (id: number) => apiRequest<any>('tourist', 'TouristOrderInfo', API_ROUTES.tourist.touristOrderInfo.getById, { id }),
+      create: (newOrder: any) => apiRequest<any>('tourist', 'TouristOrderInfo', API_ROUTES.tourist.touristOrderInfo.create, {}, newOrder),
+      update: (id: number, updatedOrder: any) => apiRequest<any>('tourist', 'TouristOrderInfo', API_ROUTES.tourist.touristOrderInfo.update, { id }, updatedOrder),
+      delete: (id: number) => apiRequest<any>('tourist', 'TouristOrderInfo', API_ROUTES.tourist.touristOrderInfo.delete, { id }),
+      search: (searchTerm: string) => apiRequest<any>('tourist', 'TouristOrderInfo', API_ROUTES.tourist.touristOrderInfo.search, { searchTerm }),
+    },
+    weatherInfo: {
+      fetchCity: (cityName: String) => apiRequest<any>('weather', 'WeatherInfo', API_ROUTES.weather.weatherInfo, { cityName })
+    }
   };

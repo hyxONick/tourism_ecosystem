@@ -1,12 +1,142 @@
 .container {
   display: flex;
-  width: 100vw;
-  background-color: bisque;
-  padding: 20px 30px;
   justify-content: space-between;
+  align-items: center;
+  padding: 50px 80px;
+  font-size: 20px;
+
+  .leftContainer {
+    .backgroundImg {
+      background-image: url("/img/tour_guide.png");
+      height: 50px;
+      width: 180px;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      &:hover {
+        transform: scale(1.12);
+      }
+    }
+  }
+
+  .wrapper {
+    gap: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+
+    .button {
+      color: black;
+      height: 50px;
+      width: 140px;
+      background-color: #ffda32;
+      border-radius: 5px;
+    }
+    a,
+    button {
+      transition: transform 0.3s ease;
+      &:hover {
+        transform: scale(1.12);
+      }
+    }
+  }
+
+  .menuIconContainer {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    cursor: pointer;
+    width: 170px;
+    height: 50px;
+    background-color: #ffda32;
+    border-radius: 10px;
+    padding: 10px;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  .menuIcon {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    img {
+      margin-right: 20px;
+      width: 25px;
+      height: 25px;
+    }
+    .menuFont {
+      font-size: 18px;
+      color: black;
+    }
+  }
+
+  .menu {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+    color: black;
+    border-radius: 10px;
+    background-color: #ffda32;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    font-size: 18px;
+    width: 170px;
+  }
+
+  .menuOpen .menu {
+    opacity: 1;
+    max-height: 300px;
+    transition: all 0.5s ease;
+  }
+
+  @media (max-width: 1200px) {
+    .container {
+      padding: 10px 20px;
+    }
+    .leftContainer {
+      margin-right: 40px;
+    }
+    .wrapper {
+      font-size: 18px;
+    }
+  }
+
+  @media (max-width: 992px) {
+    .menuIcon {
+      display: flex;
+      width: 170px;
+    }
+    .menu {
+      display: flex;
+    }
+    .wrapper {
+      display: none;
+    }
+    .menuIconContainer {
+      display: flex;
+    }
+  }
 }
+// =======
+//   width: 100vw;
+//   background-color: bisque;
+//   padding: 20px 30px;
+//   justify-content: space-between;
+// }
 
 .nav-links {
   display: flex;
   gap: 15px;
 }
+// >>>>>>> refactor/profile

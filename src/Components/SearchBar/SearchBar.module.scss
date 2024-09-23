@@ -1,0 +1,89 @@
+.container {
+  background: white;
+  display: flex;
+  width: 1000px;
+  height: 90px;
+  align-items: center;
+  justify-content: center;
+  gap: 70px;
+  padding: 50px;
+  position: relative;
+  margin: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(123, 188, 176, 0.5);
+  margin-top: -50px;
+
+  .first {
+    .location {
+      color: #7bbcb0;
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      gap: 8px;
+    }
+  }
+  .second {
+    .num {
+      color: #7bbcb0;
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      gap: 8px;
+    }
+  }
+  .third {
+    .date {
+      display: flex;
+      color: #7bbcb0;
+      align-items: center;
+      margin-bottom: 10px;
+      gap: 8px;
+    }
+  }
+  .btn {
+    background-color: #ffda32;
+    height: 54px;
+    width: 150px;
+    border-radius: 40px;
+  }
+}
+@media (max-width: 1200px) {
+  .container {
+    width: 800px;
+    gap: 30px;
+    .btn {
+      height: 54px;
+      width: 54px;
+      border-radius: 50%;
+      font-size: 13px;
+    }
+  }
+}
+@media (max-width: 992px) {
+  .container {
+    width: 600px;
+    gap: 10px;
+    font-size: 13px;
+    padding: 30px;
+    .btn {
+      height: 54px;
+      width: 54px;
+      border-radius: 50%;
+      font-size: 13px;
+    }
+  }
+}
+@media (max-width: 576px) {
+  .container {
+    width: 480px;
+    gap: 1px;
+    font-size: 12px;
+    padding: 2px;
+    .btn {
+      height: 54px;
+      width: 54px;
+      border-radius: 50%;
+      font-size: 12px;
+    }
+  }
+}

@@ -1,6 +1,6 @@
 import { FC } from "react";
 import styles from "./homepage.module.scss";
-import { Navbar } from "@/components/navbar";
+import { Navbar } from "@/components/navbar/navbar";
 
 interface HomePageLayoutProps {
   children: React.ReactNode;

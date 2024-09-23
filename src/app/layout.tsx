@@ -30,12 +30,7 @@ export default function RootLayout({
         />
         <link rel="icon" href="/img/Airplane.jpg"></link>
       </head>
-
-      <body className={inter.className}>
-  
-        {children}
-        {/* <Footer /> */}
-      </body>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }

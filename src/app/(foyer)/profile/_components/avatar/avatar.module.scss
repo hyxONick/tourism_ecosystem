@@ -1,0 +1,53 @@
+.profile-avatar {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.profile-avatar img {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border: none;
+  box-shadow: none;
+}
+
+.profile-avatar .name p {
+  width: auto;
+  height: auto;
+  font-family: Mulish;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28px;
+  text-align: center;
+  color: #1c2b38;
+}
+
+.profile-avatar .details {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Adjust the spacing between items */
+  margin-bottom: 1rem; /* Optional: Add space below the details section */
+}
+
+.profile-avatar .details > div {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.profile-avatar .details img {
+  width: 16px; /* Adjust size as needed */
+  height: 16px; /* Adjust size as needed */
+}
+
+.profile-avatar .details p {
+  font-family: Mulish;
+  font-size: 14px;
+  font-weight: 600;
+  color: #495560;
+  margin: 0;
+}

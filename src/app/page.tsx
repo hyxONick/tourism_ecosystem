@@ -7,6 +7,7 @@ import { ScenarioCard } from "@/components/ScenarioCard/ScenarioCard";
 import { Banner } from "@/components/Banner/Banner";
 import { ActivityCard } from "@/components/ActivityCard/ActivityCard";
 import { useRef } from "react";
+import { Weather } from "@/Components/Weather/weather";
 
 export default function Home() {
   const data = [
@@ -55,6 +56,7 @@ export default function Home() {
       </section>
       <ScenarioCard data={data} />
       <Banner />
+      <Weather />
       <ActivityCard />
     </main>
   );

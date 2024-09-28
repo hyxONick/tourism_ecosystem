@@ -16,12 +16,12 @@ const apiClient = axios.create({
 // Request interceptor (for adding tokens or other processing)
 apiClient.interceptors.request.use((config: InternalAxiosRequestConfig) => {
     const token = localStorage.getItem('token');
-  
+    const userId = localStorage.getItem('userId');
     // ensure config.headers exist，set Authorization
-    if (token) {
-      config.headers['Authorization'] = `Bearer ${token}`;
+    if (token && userId) {
+      config.headers['Authorization'] = `Bearer ${userId} ${token}`;
     }
-  
+    
     return config;
   }, (error) => {
     return Promise.reject(error);

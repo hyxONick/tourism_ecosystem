@@ -1,0 +1,55 @@
+.weatherCard {
+  width: 20%;
+  border: 1px solid rgb(204, 204, 204, 0.2);
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px 20px;
+}
+
+.up {
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 36px;
+}
+
+.icon {
+  font-size: 50px;
+}
+
+.temp {
+  display: flex;
+  color: #cfe2e7;
+}
+
+.down {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 20px;
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 15px;
+
+    .details:nth-child(2n) {
+      padding-left: 15px;
+    }
+  }
+}
+
+
+.details {
+  flex: 1 1 45%;
+  display: flex;
+  align-items: center;
+  font-size: 26px;
+  color: #cfe2e7;
+
+  span {
+    margin-left: 8px;
+    font-size: 18px;
+  }
+}

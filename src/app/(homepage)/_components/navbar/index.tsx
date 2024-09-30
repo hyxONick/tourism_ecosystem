@@ -3,7 +3,17 @@ import React, { useState } from "react";
 import styles from "./navbar.module.scss";
 import Link from "next/link";
 
-export const Navbar: React.FC = () => {
+type NavbarProps = {
+  logoSrc?: string;
+  linkColor?: string;
+  borderBottom?: string;
+};
+
+export const Navbar: React.FC<NavbarProps> = ({
+  logoSrc = "/img/tour_guide.png",
+  linkColor = "white",
+  borderBottom = "none",
+}) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleMenuToggle = () => {
@@ -11,19 +21,25 @@ export const Navbar: React.FC = () => {
   };
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} style={{ borderBottom: borderBottom }}>
       <div className={styles.leftContainer}>
-        <Link href={"#home"}>
-          <div className={styles.backgroundImg}></div>
+        <Link href={"/"}>
+          <div
+            className={styles.backgroundImg}
+            style={{ backgroundImage: `url(${logoSrc})` }}
+          ></div>
         </Link>
       </div>
 
-      <div className={styles.wrapper}>
-        <Link href={"#home"}>Home</Link>
-        <Link href={"#explore"}>Explore</Link>
+      <div className={styles.wrapper} style={{ color: linkColor }}>
+        {" "}
+        <Link href={"/"}>Home</Link>
+        <Link href="/scenarioPage">Scenarios</Link>
         <Link href={"/About Us"}>About Us</Link>
-        <Link href={"/Help"}>Help</Link>
-        <button className={styles.button}>Sign In</button>
+        <Link href={"/hotelPage"}>Room Booking</Link>
+        <Link href={"/login"}>
+          <button className={styles.button}>Sign In</button>
+        </Link>
       </div>
 
       <div
@@ -41,8 +57,8 @@ export const Navbar: React.FC = () => {
           <div className={styles.menu}>
             <Link href={"/home"}>Home</Link>
             <Link href={"/About Us"}>About Us</Link>
-            <Link href={"#explore"}>Explore</Link>
-            <Link href={"/Help"}>Help</Link>
+            <Link href={"/scenarioPage"}>Scenarios</Link>
+            <Link href={"/hotelPage"}>Room Booking</Link>
           </div>
         )}
       </div>

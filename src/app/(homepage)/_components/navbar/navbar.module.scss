@@ -2,8 +2,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 50px 80px;
+  padding: 30px 80px 20px 80px;
   font-size: 20px;
+  align-items: center;
 
   .leftContainer {
     .backgroundImg {
@@ -33,13 +34,13 @@
       height: 50px;
       width: 140px;
       background-color: #ffda32;
-      border-radius: 5px;
+      border-radius: 20px;
     }
     a,
     button {
       transition: transform 0.3s ease;
       &:hover {
-        transform: scale(1.12);
+        transform: scale(1.05);
       }
     }
   }

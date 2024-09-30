@@ -1,8 +1,6 @@
 "use client";
-
-import React, { useState } from "react";
-import { ScenarioCard } from "../ScenarioCard/ScenarioCard";
-import styles from "./ActivityCard.module.scss";
+import { ScenarioList } from "../ScenarioCardList/ScenarioList";
+import styles from "./Activitylist.module.scss";
 
 export const ActivityCard = () => {
   const data = [
@@ -37,11 +35,11 @@ export const ActivityCard = () => {
       <div className={styles.top}>
         <div>Featured Activities</div>
         <p>
-          Come and explore the best of Wollongong’s activities – where every
-          experience is a new story waiting to be told!
+          Come and explore the best activities - where every experience is a new
+          story waiting to be told!
         </p>
       </div>
-      <ScenarioCard data={data} />
+      <ScenarioList data={data} />
     </div>
   );
 };

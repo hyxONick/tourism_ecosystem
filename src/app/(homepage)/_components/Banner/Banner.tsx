@@ -1,4 +1,6 @@
+import Link from "next/link";
 import styles from "./Banner.module.scss";
+
 export const Banner = () => {
   return (
     <>
@@ -14,7 +16,9 @@ export const Banner = () => {
           culture, it's the perfect spot for families, adventurers, and
           relaxation seekers alike.
         </p>
-        <button>Book Now</button>
+        <Link href="/scenarioPage">
+          <button>Book Now</button>
+        </Link>
       </div>
     </>
   );

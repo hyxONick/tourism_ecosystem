@@ -10,9 +10,12 @@ const FoyerLayout: FC<FoyerLayoutProps> = (props) => {
   const { children } = props;
   return (
     <div>
-      <Navbar />
+      <Navbar
+        logoSrc="/img/tour_guide.svg"
+        linkColor="#495560"
+        borderBottom="1px solid #E6E6E6"
+      />
       {children}
-      <Footer />
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import { Footer } from "@/Components/footer";
-import { Navbar } from "@/Components/navbar/navbar";
 import { FC } from "react";
+import { Navbar } from "../(homepage)/_components/navbar";
 
 interface FoyerLayoutProps {
   children: React.ReactNode;

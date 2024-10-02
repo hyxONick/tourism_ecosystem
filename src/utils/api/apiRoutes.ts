@@ -13,7 +13,7 @@ export interface ApiRoute {
     tourist: {
         sceneryInfo: {
             fetchAll: { method: 'get', endpoint: '/fetch' } as ApiRoute,
-            getById: { method: 'get', endpoint: '/{id}' } as ApiRoute,
+            getById: { method: 'get', endpoint: '/getSceneryInfo/{id}' } as ApiRoute,
             create: { method: 'post', endpoint: '/create' } as ApiRoute,
             update: { method: 'post', endpoint: '/update/{id}' } as ApiRoute,
             delete: { method: 'post', endpoint: '/delete/{id}' } as ApiRoute,
@@ -21,14 +21,14 @@ export interface ApiRoute {
           },
           touristInfo: {
             fetchAll: { method: 'get', endpoint: '/fetch' } as ApiRoute,
-            getById: { method: 'get', endpoint: '/{id}' } as ApiRoute,
+            getById: { method: 'get', endpoint: '/getTouristInfo/{id}' } as ApiRoute,
             create: { method: 'post', endpoint: '/create' } as ApiRoute,
             update: { method: 'post', endpoint: '/update/{id}' } as ApiRoute,
             delete: { method: 'post', endpoint: '/delete/{id}' } as ApiRoute,
           },
           touristOrderInfo: {
             fetchAll: { method: 'get', endpoint: '/fetch' } as ApiRoute,
-            getById: { method: 'get', endpoint: '/{id}' } as ApiRoute,
+            getById: { method: 'get', endpoint: '/getTouristOrderInfo/{id}' } as ApiRoute,
             create: { method: 'post', endpoint: '/create' } as ApiRoute,
             update: { method: 'post', endpoint: '/update/{id}' } as ApiRoute,
             delete: { method: 'post', endpoint: '/delete/{id}' } as ApiRoute,

@@ -21,10 +21,19 @@
 }
 
 .content {
-  padding: 0 600px;
+  padding: 0 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 
   .test1 {
     padding-top: 30px;
+    margin-bottom: 50px;
+    display: flex;
+
+    justify-content: center;
+    flex-direction: column;
 
     h3 {
       font-weight: 700;
@@ -37,8 +46,36 @@
     }
 
     img {
-      width: 100%;
-      padding: 10px 0 60px;
+      display: flex;
+      align-items: center;
+      width: 600px;
+      height: 400px;
+    }
+  }
+}
+
+@media (max-width: 1500px) {
+  .bgImg {
+    align-items: center;
+
+    .header {
+      font-size: 40px;
+    }
+  }
+  .content {
+    padding: 0 200px;
+  }
+}
+
+@media (max-width: 800px) {
+  .content {
+    padding: 0 100px;
+
+    .test1 {
+      img {
+        width: 400px;
+        height: 200px;
+      }
     }
   }
 }

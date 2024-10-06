@@ -3,33 +3,25 @@ import styles from "./roomCard.module.scss";
 import { FaLocationDot } from "react-icons/fa6";
 import { FaBed } from "react-icons/fa6";
 import { MdPeopleAlt } from "react-icons/md";
-
-interface RoomCardData {
-  img: string;
-  title: string;
-  location: string;
-  price: number;
-  beds: number;
-  sleeps: number;
-}
+import { IRoom } from "@/contracts/room";
 
 interface RoomCardProps {
-  data: RoomCardData;
+  data: IRoom;
 }
 
 export const RoomCard: React.FC<RoomCardProps> = ({ data }) => {
   return (
     <div className={styles.container}>
-      <Link href={"/hotelDetailPage"}>
-        <img src={data.img} alt={data.title} />
+      <Link href={`/hotelDetailPage/${data.id}`}>
+        <img src={data.picUrl} alt={data.roomName} />
       </Link>
       <div className={styles.wrapper}>
-        <div className={styles.title}>{data.title}</div>
+        <div className={styles.title}>{data.roomName}</div>
         <div className={styles.location}>
           <div className={styles.icon1}>
             <FaLocationDot />
           </div>
-          {data.location}
+          {data.address}
         </div>
 
         <div className={styles.bottom}>
@@ -37,13 +29,13 @@ export const RoomCard: React.FC<RoomCardProps> = ({ data }) => {
             <div className={styles.icon2}>
               <FaBed />
             </div>
-            {data.beds} beds
+            {data.numberOfBeds} beds
           </div>
           <div className={styles.right}>
             <div className={styles.icon3}>
               <MdPeopleAlt />
             </div>
-            {data.sleeps} sleeps
+            {data.capacity} sleeps
           </div>
           <div className={styles.price}>
             <div className={styles.detail}>${data.price}</div> /night

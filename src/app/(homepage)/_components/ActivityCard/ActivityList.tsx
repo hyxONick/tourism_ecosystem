@@ -1,6 +1,6 @@
 "use client";
 import { ScenarioList } from "../ScenarioCardList/ScenarioList";
-import styles from "./Activitylist.module.scss";
+import styles from "./ActivityList.module.scss";
 
 export const ActivityCard = () => {
   const data = [
@@ -31,7 +31,7 @@ export const ActivityCard = () => {
   ];
 
   return (
-    <div className={styles.container}>
+    <>
       <div className={styles.top}>
         <div>Featured Activities</div>
         <p>
@@ -40,7 +40,7 @@ export const ActivityCard = () => {
         </p>
       </div>
       <ScenarioList data={data} />
-    </div>
+    </>
   );
 };
 

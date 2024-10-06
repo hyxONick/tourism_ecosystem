@@ -1,4 +1,4 @@
-import { Footer } from "@/Components/footer";
+import { Footer } from "@/components/footer";
 import { FC } from "react";
 import { Navbar } from "../(homepage)/_components/navbar";
 

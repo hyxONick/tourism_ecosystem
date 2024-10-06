@@ -64,12 +64,11 @@ const scenarioPage = () => {
     },
   ];
 
-  const [visibleItems, setVisibleItems] = useState(3); // 初始显示3条数据
+  const [visibleItems, setVisibleItems] = useState(3);
   const [sortOption, setSortOption] = useState("price-high-to-low");
 
   const handleSortChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSortOption(e.target.value);
-    console.log("Selected sort option:", e.target.value);
   };
 
   const sortedHotelData = [...hotelData].sort((a, b) => {
@@ -81,7 +80,7 @@ const scenarioPage = () => {
   });
 
   const handleLoadMore = () => {
-    setVisibleItems((prev) => Math.min(prev + 3, hotelData.length)); // 加载3条或剩余的所有条目
+    setVisibleItems((prev) => Math.min(prev + 3, hotelData.length));
   };
 
   return (
@@ -116,14 +115,13 @@ const scenarioPage = () => {
             <div className={styles.right}>
               <div className={styles.top}>
                 <div className={styles.title}>{item.title}</div>
-
                 <div className={styles.money}>
                   <div>${item.price}</div>
                   <span>per person</span>
                 </div>
               </div>
               <div className={styles.bottom}>
-                <div className={styles.parent}>
+                <div className={styles.wrapper2}>
                   <span className={styles.first}>
                     <IoMdTime />
                     Duration {item.time} hours
@@ -137,7 +135,7 @@ const scenarioPage = () => {
                     Family Plan
                   </span>
                 </div>
-                <button>See availability</button>
+                <button className={styles.btn}>See availability</button>
               </div>
             </div>
           </div>

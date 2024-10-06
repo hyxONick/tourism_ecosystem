@@ -36,7 +36,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         <Link href={"/"}>Home</Link>
         <Link href="/scenarioPage">Scenarios</Link>
         <Link href={"/About Us"}>About Us</Link>
-        <Link href={"/hotelPage"}>Room Booking</Link>
+        <Link href={"/hotelPage"}>Hotel</Link>
         <Link href={"/login"}>
           <button className={styles.button}>Sign In</button>
         </Link>
@@ -58,7 +58,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             <Link href={"/home"}>Home</Link>
             <Link href={"/About Us"}>About Us</Link>
             <Link href={"/scenarioPage"}>Scenarios</Link>
-            <Link href={"/hotelPage"}>Room Booking</Link>
+            <Link href={"/hotelPage"}>Hotel</Link>
           </div>
         )}
       </div>

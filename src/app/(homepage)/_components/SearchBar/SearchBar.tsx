@@ -6,7 +6,6 @@ import { MdOutlineDateRange } from "react-icons/md";
 export const SearchBar = () => {
   return (
     <div className={styles.container}>
-      {/* Location Input */}
       <div className={styles.first}>
         <div className={styles.location}>
           <CiLocationOn className={styles.icon} />
@@ -17,7 +16,6 @@ export const SearchBar = () => {
         </div>
       </div>
 
-      {/* Guests Input */}
       <div className={styles.second}>
         <div className={styles.num}>
           <MdOutlinePeopleAlt className={styles.icon} />
@@ -28,7 +26,6 @@ export const SearchBar = () => {
         </div>
       </div>
 
-      {/* Date Input */}
       <div className={styles.third}>
         <div className={styles.date}>
           <MdOutlineDateRange className={styles.icon} />

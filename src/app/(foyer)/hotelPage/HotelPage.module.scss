@@ -32,7 +32,6 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-
     gap: 50px;
   }
 }
@@ -42,4 +41,42 @@
   margin-top: -20px;
   font-size: 20px;
   color: #a8aaaa;
+}
+@media (max-width: 1400px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+
+    .wrapper {
+      padding: 0 20px;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      .font {
+        display: flex;
+        flex-direction: column;
+        margin-top: 50px;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        span {
+          font-size: 25px;
+          font-weight: 500;
+        }
+        p {
+          padding-left: 10px;
+        }
+      }
+    }
+    .room {
+      display: flex;
+      padding: 60px 100px;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 50px;
+    }
+  }
 }

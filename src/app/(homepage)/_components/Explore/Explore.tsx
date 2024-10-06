@@ -31,7 +31,7 @@ export const Explore = () => {
     },
     {
       name: "Taronga Zoo",
-      url: "https://scontent.fsyd4-1.fna.fbcdn.net/v/t39.30808-6/368242762_697772625722404_2501978271607759071_n.jpg?stp=dst-jpg_s960x960&_nc_cat=111&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=Sqs3nmh3lOAQ7kNvgHmsExW&_nc_ht=scontent.fsyd4-1.fna&_nc_gid=A8cO4iV_56V56JEIzKfZkB8&oh=00_AYAx39gYxDE9Mt_EYNDLRtf1mZSanBXDEXKxVxnmmlfnow&oe=67006BBC",
+      url: "/img/zoo.jpg",
       description:
         "Taking a ferry directly from Circular Quay to Taronga Zoo, located in the suburb of Mosman, is the first unexpected joy of visiting the animal park.",
       tag: [
@@ -44,7 +44,7 @@ export const Explore = () => {
     },
     {
       name: "Art Gallery",
-      url: "https://scontent.fsyd4-1.fna.fbcdn.net/v/t39.30808-6/336030539_696530205549613_7913953989819576029_n.jpg?stp=dst-jpg_s960x960&_nc_cat=110&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=TTmWp1nkd2gQ7kNvgEhcBL2&_nc_ht=scontent.fsyd4-1.fna&_nc_gid=ArJIBdBEQAmdCO4j6quLwtw&oh=00_AYAjgasCc7XLKb21Sn43iukLpSsMmVoZgCLRTJ-4R0Q2Nw&oe=67007683",
+      url: "/img/art.jpg",
       description:
         "The Art Gallery of New South Wales is one of Australia's leading art museums. It holds significant collections of Australian, European and Asian art, and presents nearly forty exhibitions annually. ",
       tag: [
@@ -57,7 +57,7 @@ export const Explore = () => {
     },
     {
       name: "Darling Harbour",
-      url: "https://scontent.fsyd4-2.fna.fbcdn.net/v/t39.30808-6/392781241_8077188012297029_4074788676389401619_n.jpg?stp=dst-jpg_s960x960&_nc_cat=104&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=P2mYpIjnCvcQ7kNvgF-XwyN&_nc_ht=scontent.fsyd4-2.fna&_nc_gid=AXgsHax15NEsJWik6tZehuQ&oh=00_AYDnAgnx1tdCF-9vzDLwsfltNXgrYo_-NjMJnMt8kwpm0g&oe=67006FF9",
+      url: "/img/darling.jpg",
       description:
         "Darling Harbour is lively day and night with numerous play areas for children, buzzing bar spots for the adults and an array of dining options for all. ",
       tag: [
@@ -70,7 +70,7 @@ export const Explore = () => {
     },
     {
       name: "Opera House",
-      url: "https://scontent.fsyd4-1.fna.fbcdn.net/v/t39.30808-6/432995757_817369533762744_5450768275008382291_n.png?_nc_cat=108&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=PZGve5VOcQMQ7kNvgGbW__O&_nc_ht=scontent.fsyd4-1.fna&_nc_gid=AcNET5A3kQgDaZ6KkCya29M&oh=00_AYD5miMxV9UYoJ86goftswfi05o5N1QRNP_aMofE988Jfg&oe=6700540F",
+      url: "/img/opera.png",
       description:
         "One of the most iconic buildings in the world – the Sydney Opera House is an architectural masterpiece and vibrant performance space.",
       tag: [

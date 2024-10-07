@@ -12,3 +12,25 @@
 .personal-info-date {
   width: 100%;
 }
+
+/* personal_info.module.scss */
+
+.personal-info-container {
+  padding: 20px;
+  max-width: 600px;
+  margin: auto; /* Center the container */
+}
+
+.info-card {
+  border-radius: 8px; /* Rounded corners for the card */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.info-item {
+  margin-bottom: 10px; /* Space between info items */
+}
+
+.button-container {
+  margin-top: 20px; /* Space above the button */
+  text-align: right; /* Align button to the right */
+}

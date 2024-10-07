@@ -31,6 +31,7 @@ const LoginPage = () => {
       if (response.id) {
         localStorage.setItem('token', response.token);
         localStorage.setItem('userId', response.id);
+        localStorage.setItem("userInfo", JSON.stringify(response));
         router.replace('/');
       }
     } catch (err) {

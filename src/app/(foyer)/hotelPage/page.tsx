@@ -109,7 +109,7 @@ const HotelPage = () => {
   // ];
 
   const { data: rooms, isLoading } = useSWR(
-    "http://localhost:8093/roominfo/fetch",
+    "http://localhost:8090/accommodation/roominfo/fetch",
     fetcher
   );
 

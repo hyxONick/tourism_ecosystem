@@ -83,7 +83,42 @@ const apiRequest = <T>(
       delete: (id: number) => apiRequest<any>('tourist', 'TouristOrderInfo', API_ROUTES.tourist.touristOrderInfo.delete, { id }),
       search: (searchTerm: string) => apiRequest<any>('tourist', 'TouristOrderInfo', API_ROUTES.tourist.touristOrderInfo.search, { searchTerm }),
     },
+    booking: {
+      book: (bookingInfo: any) => apiRequest<any>('accommodation', 'booking', API_ROUTES.accommodation.booking.book, {}, bookingInfo),
+      getById: (id: number) => apiRequest<any>('accommodation', 'booking', API_ROUTES.accommodation.booking.getById, { id }),
+      delete: (id: number) => apiRequest<any>('accommodation', 'booking', API_ROUTES.accommodation.booking.delete, { id }),
+    },
+    roomInfo: {
+      fetchAll: () => apiRequest<any>('accommodation', 'roomInfo', API_ROUTES.accommodation.roomInfo.fetchAll),
+      getById: (id: number) => apiRequest<any>('accommodation', 'roomInfo', API_ROUTES.accommodation.roomInfo.getById, { id }),
+      create: (newRoomInfo: any) => apiRequest<any>('accommodation', 'roomInfo', API_ROUTES.accommodation.roomInfo.create, {}, newRoomInfo),
+      update: (id: number, updatedRoomInfo: any) => apiRequest<any>('accommodation', 'roomInfo', API_ROUTES.accommodation.roomInfo.update, { id }, updatedRoomInfo),
+      delete: (id: number) => apiRequest<any>('accommodation', 'roomInfo', API_ROUTES.accommodation.roomInfo.delete, { id }),
+    },
     weatherInfo: {
       fetchCity: (cityName: String) => apiRequest<any>('weather', 'WeatherInfo', API_ROUTES.weather.weatherInfo, { cityName })
+    },
+    equipmentRental: {
+      fetchAll: () => apiRequest<any>('outdoor', 'EquipmentRental', API_ROUTES.outdoor.equipmentRental.fetchAll),
+      getRenterById: (id: number) => apiRequest<any>('outdoor', 'EquipmentRental', API_ROUTES.outdoor.equipmentRental.getRenterById, { id }),
+      getById: (id: number) => apiRequest<any>('outdoor', 'EquipmentRental', API_ROUTES.outdoor.equipmentRental.getById, { id }),
+      create: (newEquipment: any) => apiRequest<any>('outdoor', 'EquipmentRental', API_ROUTES.outdoor.equipmentRental.create, {}, newEquipment),
+      update: (id: number, updatedEquipment: any) => apiRequest<any>('outdoor', 'EquipmentRental', API_ROUTES.outdoor.equipmentRental.update, { id }, updatedEquipment),
+      delete: (id: number) => apiRequest<any>('outdoor', 'EquipmentRental', API_ROUTES.outdoor.equipmentRental.delete, { id }),
+    },
+    productInfo: {
+      fetchAll: () => apiRequest<any>('outdoor', 'ProductInfo', API_ROUTES.outdoor.productInfo.fetchAll),
+      getById: (id: number) => apiRequest<any>('outdoor', 'ProductInfo', API_ROUTES.outdoor.productInfo.getById, { id }),
+      create: (newProduct: any) => apiRequest<any>('outdoor', 'ProductInfo', API_ROUTES.outdoor.productInfo.create, {}, newProduct),
+      update: (id: number, updatedProduct: any) => apiRequest<any>('outdoor', 'ProductInfo', API_ROUTES.outdoor.productInfo.update, { id }, updatedProduct),
+      delete: (id: number) => apiRequest<any>('outdoor', 'ProductInfo', API_ROUTES.outdoor.productInfo.delete, { id }),
+    },
+    productOrderInfo: {
+      fetchAll: () => apiRequest<any>('outdoor', 'ProductOrderInfo', API_ROUTES.outdoor.productOrderInfo.fetchAll),
+      getBuyerById: (id: number) => apiRequest<any>('outdoor', 'ProductOrderInfo', API_ROUTES.outdoor.productOrderInfo.getBuyerById, { id }),
+      getById: (id: number) => apiRequest<any>('outdoor', 'ProductOrderInfo', API_ROUTES.outdoor.productOrderInfo.getById, { id }),
+      create: (newOrder: any) => apiRequest<any>('outdoor', 'ProductOrderInfo', API_ROUTES.outdoor.productOrderInfo.create, {}, newOrder),
+      update: (id: number, updatedOrder: any) => apiRequest<any>('outdoor', 'ProductOrderInfo', API_ROUTES.outdoor.productOrderInfo.update, { id }, updatedOrder),
+      delete: (id: number) => apiRequest<any>('outdoor', 'ProductOrderInfo', API_ROUTES.outdoor.productOrderInfo.delete, { id }),
     }
   };

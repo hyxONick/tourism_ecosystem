@@ -12,7 +12,7 @@ const scenarioPage = () => {
   const [visibleItems, setVisibleItems] = useState(3); // 初始显示3条数据
   const [sortOption, setSortOption] = useState("price-high-to-low");
 
-  const { data: hotelData, error, isLoading } = useSWR("http://localhost:8092/SceneryInfo/fetch", fetcher)
+  const { data: hotelData, error, isLoading } = useSWR("http://localhost:8090/tourist/SceneryInfo/fetch", fetcher)
 
   if (isLoading) return null;
 

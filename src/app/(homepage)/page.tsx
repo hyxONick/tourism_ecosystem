@@ -9,7 +9,7 @@ import axios from "axios";
 import { IScenario } from "@/contracts/scenario";
 
 export default async function Home() {
-  const scenarioInfo = (await axios.get("http://localhost:8092/SceneryInfo/fetch")).data as IScenario[];
+  // const scenarioInfo = (await axios.get("http://localhost:8092/SceneryInfo/fetch")).data as IScenario[];
 
   return (
     <main className={styles.main}>
@@ -28,7 +28,7 @@ export default async function Home() {
       <section id="explore">
         <Explore />
       </section>
-      <ScenarioList data={scenarioInfo} />
+      {/* <ScenarioList data={scenarioInfo} /> */}
       <Banner />
       <ActivityCard />
     </main>

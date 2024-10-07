@@ -1,91 +1,50 @@
 "use client";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import styles from "./Explore.module.scss";
-import { AiOutlineSlack } from "react-icons/ai";
-import { AiOutlineDeploymentUnit } from "react-icons/ai";
-import { AiOutlineDocker } from "react-icons/ai";
-import { AiOutlineTags } from "react-icons/ai";
-import { CiRainbow } from "react-icons/ci";
+import useSWR from "swr";
+import { fetcher } from "@/utils/fetcher";
+import dayjs from "dayjs";
 
 export const Explore = () => {
-  const icons = [
-    <AiOutlineSlack />,
-    <AiOutlineDeploymentUnit />,
-    <AiOutlineDocker />,
-    <AiOutlineTags />,
-    <CiRainbow />,
-  ];
   const data = [
     {
-      name: "Wollongong",
-      url: "https://i0.wp.com/brookebeyond.com/wp-content/uploads/2016/07/IMG_3778.jpg?resize=1024%2C717&ssl=1",
+      name: "Sydney",
+      url: "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       description:
         "The Wollongong is so underrated. Everyone knows about Sydney, but what about the gorgeous south coast? In close proximity to the phenomenal Royal National Park, overflowing with white sand beaches.",
-      tag: [
-        "Public Transportation",
-        "nature and adventure",
-        "local visit",
-        "private transportation",
-        "beautiful tours",
-      ],
     },
     {
       name: "Wollongong",
       url: "https://i0.wp.com/brookebeyond.com/wp-content/uploads/2016/07/IMG_3778.jpg?resize=1024%2C717&ssl=1",
       description:
         "The Wollongong is so underrated. Everyone knows about Sydney, but what about the gorgeous south coast? In close proximity to the phenomenal Royal National Park, overflowing with white sand beaches.",
-      tag: [
-        "Public Transportation",
-        "nature and adventure",
-        "local visit",
-        "private transportation",
-        "beautiful tours",
-      ],
     },
     {
-      name: "Wollongong",
-      url: "https://i0.wp.com/brookebeyond.com/wp-content/uploads/2016/07/IMG_3778.jpg?resize=1024%2C717&ssl=1",
+      name: "Perth",
+      url: "https://images.unsplash.com/photo-1524586410818-196d249560e4?q=80&w=3152&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       description:
         "The Wollongong is so underrated. Everyone knows about Sydney, but what about the gorgeous south coast? In close proximity to the phenomenal Royal National Park, overflowing with white sand beaches.",
-      tag: [
-        "Public Transportation",
-        "nature and adventure",
-        "local visit",
-        "private transportation",
-        "beautiful tours",
-      ],
     },
     {
-      name: "Wollongong",
-      url: "https://i0.wp.com/brookebeyond.com/wp-content/uploads/2016/07/IMG_3778.jpg?resize=1024%2C717&ssl=1",
+      name: "Melbourne",
+      url: "https://images.unsplash.com/photo-1470294402047-fc1b5f39bd99?q=80&w=2500&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       description:
         "The Wollongong is so underrated. Everyone knows about Sydney, but what about the gorgeous south coast? In close proximity to the phenomenal Royal National Park, overflowing with white sand beaches.",
-      tag: [
-        "Public Transportation",
-        "nature and adventure",
-        "local visit",
-        "private transportation",
-        "beautiful tours",
-      ],
-    },
-    {
-      name: "Wollongong",
-      url: "https://i0.wp.com/brookebeyond.com/wp-content/uploads/2016/07/IMG_3778.jpg?resize=1024%2C717&ssl=1",
-      description:
-        "The Wollongong is so underrated. Everyone knows about Sydney, but what about the gorgeous south coast? In close proximity to the phenomenal Royal National Park, overflowing with white sand beaches.",
-      tag: [
-        "Public Transportation",
-        "nature and adventure",
-        "local visit",
-        "private transportation",
-        "beautiful tours",
-      ],
     },
   ];
 
-  const [selectedCity, setSelectedCity] = useState(data[2]);
   const [selectedIndex, setSelectedIndex] = useState(2);
-  const tagColors = ["#D176E0", "#7BBCB0", "#E4B613", "#FC3131", "#5C9BDE"];
+
+  const selectedCity = useMemo(() => {
+    return data[selectedIndex];
+  }, [selectedIndex]);
+
+  const { data: weather, isLoading } = useSWR(
+    `http://localhost:8090/Weather/WeatherInfo/${selectedCity.name}`,
+    fetcher
+  );
+
+  // if (isLoading) return null;
 
   return (
     <div className={styles.container}>
@@ -104,15 +63,11 @@ export const Explore = () => {
               index === selectedIndex ? styles.selected : ""
             }`}
             key={index}
+            onClick={() => {
+              setSelectedIndex(index);
+            }}
           >
-            <button
-              onClick={() => {
-                setSelectedCity(city);
-                setSelectedIndex(index);
-              }}
-            >
-              {city.name}
-            </button>
+            {city.name}
           </div>
         ))}
       </div>
@@ -127,21 +82,19 @@ export const Explore = () => {
           </div>
 
           <div className={styles.tag}>
-            {selectedCity.tag.map((tag, index) => {
-              const color = tagColors[index % tagColors.length];
-              return (
-                <div
-                  key={index}
-                  className={styles.tagItem}
-                  style={{ color: color }}
-                >
-                  <span className={styles.icon}>
-                    {icons[index % icons.length]}
-                  </span>
-                  {tag}
+            {!isLoading && (
+              <div>
+                <div style={{ display: "flex", alignItems: "center" }}>
+                  <img
+                    src={weather.conditionIcon}
+                    alt=""
+                    style={{ width: 50, height: 50 }}
+                  />
+                  <p>Tempature: {weather.tempC}</p>
                 </div>
-              );
-            })}
+                <p>{dayjs(weather.localtime).format("DD/MM/YYYY HH:mm")}</p>
+              </div>
+            )}
           </div>
         </div>
       </div>

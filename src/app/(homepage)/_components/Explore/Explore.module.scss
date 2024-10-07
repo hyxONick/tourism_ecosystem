@@ -38,6 +38,8 @@
       border: 1px solid #7bbcb0;
       background-color: transparent;
       transition: background-color 0.3s;
+      cursor: pointer;
+      user-select: none;
     }
 
     .selected {
@@ -54,9 +56,7 @@
     width: 100%;
 
     img {
-      padding: 0 300px;
-      width: 100%;
-
+      width: 70%;
       height: 500px;
     }
 

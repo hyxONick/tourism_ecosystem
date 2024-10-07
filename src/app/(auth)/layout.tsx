@@ -1,3 +1,6 @@
+'use client';
+import { Auth } from "@/Components/Auth";
+import { redirect } from "next/navigation";
 import { FC } from "react";
 
 interface AuthLayoutProps {
@@ -7,7 +10,7 @@ interface AuthLayoutProps {
 const AuthLayout: FC<AuthLayoutProps> = (props) => {
   const { children } = props;
 
-  return <div>{children}</div>;
+  return <Auth action={() => {redirect("/")}}>{children}</Auth>;
 };
 
 export default AuthLayout;

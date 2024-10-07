@@ -120,5 +120,10 @@ const apiRequest = <T>(
       create: (newOrder: any) => apiRequest<any>('outdoor', 'ProductOrderInfo', API_ROUTES.outdoor.productOrderInfo.create, {}, newOrder),
       update: (id: number, updatedOrder: any) => apiRequest<any>('outdoor', 'ProductOrderInfo', API_ROUTES.outdoor.productOrderInfo.update, { id }, updatedOrder),
       delete: (id: number) => apiRequest<any>('outdoor', 'ProductOrderInfo', API_ROUTES.outdoor.productOrderInfo.delete, { id }),
+    },
+    user: {
+      register:(userInfo: any) => apiRequest<any>('user', 'User', API_ROUTES.user.user.register, {}, userInfo),
+      login:(userInfo: any) => apiRequest<any>('user', 'User', API_ROUTES.user.user.login, {}, userInfo),
+      rewards:(id: number, userInfo: any) => apiRequest<any>('user', 'User', API_ROUTES.user.user.rewards, { id }, userInfo)
     }
   };

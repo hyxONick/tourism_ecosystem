@@ -7,6 +7,7 @@ import { Banner } from "@/app/(homepage)/_components/Banner/Banner";
 import { ActivityCard } from "./_components/ActivityCard/ActivityList";
 import axios from "axios";
 import { IScenario } from "@/contracts/scenario";
+import { Auth } from "@/Components/Auth";
 
 export default async function Home() {
   const scenarioInfo = (await axios.get("http://localhost:8092/SceneryInfo/fetch")).data as IScenario[];

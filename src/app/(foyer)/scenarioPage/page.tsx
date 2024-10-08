@@ -7,12 +7,20 @@ import { FaCarSide } from "react-icons/fa6";
 import { MdPeopleAlt } from "react-icons/md";
 import useSWR from "swr";
 import { fetcher } from "@/utils/fetcher";
+import { Button } from "antd";
+import { apiService } from "@/utils/api";
 
 const scenarioPage = () => {
   const [visibleItems, setVisibleItems] = useState(3); // 初始显示3条数据
   const [sortOption, setSortOption] = useState("price-high-to-low");
 
-  const { data: hotelData, error, isLoading } = useSWR("http://localhost:8090/tourist/SceneryInfo/fetch", fetcher)
+  const { role } = JSON.parse(localStorage.getItem("userInfo") || "");
+
+  const {
+    data: hotelData,
+    error,
+    isLoading,
+  } = useSWR("http://localhost:8090/tourist/SceneryInfo/fetch", fetcher);
 
   if (isLoading) return null;
 
@@ -52,41 +60,90 @@ const scenarioPage = () => {
             </select>
           </div>
         </div>
+        {!Number.isNaN(role) && role == 0 && (
+          <Link href="/scenarioCreate">
+            <Button style={{ marginLeft: "10px" }}>Create</Button>
+          </Link>
+        )}
       </div>
 
       <div className={styles.itemList}>
         {sortedHotelData.slice(0, visibleItems).map((item, index) => (
-          <div className={styles.list} key={index}>
-            <div className={styles.container}>
-              <Link href="/scenarios">
-                <img src={item.picUrl} alt={item.title} />
-              </Link>
-            </div>
-            <div className={styles.right}>
-              <div className={styles.top}>
-                <div className={styles.title}>{item.name}</div>
+          <div style={{ display: "flex", gap: 20 }}>
+            <Link
+              href={`/scenarioDetail/${item.id}`}
+              style={{ width: "25%", height: "100%" }}
+            >
+              <img src={item.picUrl} alt={item.title} />
+            </Link>
 
-                <div className={styles.money}>
-                  <div>${item.price}</div>
-                  <span>per person</span>
-                </div>
-              </div>
-              <div className={styles.bottom}>
-                <div className={styles.parent}>
-                  <span className={styles.first}>
+            <div
+              style={{
+                flex: 1,
+                display: "flex",
+                justifyContent: "space-between",
+              }}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "space-around",
+                }}
+              >
+                <h3 className={styles.title}>{item.name}</h3>
+
+                <div style={{ display: "flex", gap: 15 }}>
+                  <span
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "1px",
+                    }}
+                  >
                     <IoMdTime />
                     Duration {item.time} hours
                   </span>
-                  <span className={styles.first}>
+                  <span
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "1px",
+                    }}
+                  >
                     <FaCarSide />
                     Transport Facility
                   </span>
-                  <span className={styles.first}>
+                  <span
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "1px",
+                    }}
+                  >
                     <MdPeopleAlt />
                     Family Plan
                   </span>
                 </div>
-                <button>See availability</button>
+              </div>
+
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "space-around",
+                }}
+              >
+                <p>
+                  <span style={{ color: "#7bbcb0" }}>${item.price}</span> per
+                  person
+                </p>
+
+                <Link href={`/scenarioDetail/${item.id}`}>
+                  <button className={styles["main-button"]}>
+                    See availability
+                  </button>
+                </Link>
               </div>
             </div>
           </div>

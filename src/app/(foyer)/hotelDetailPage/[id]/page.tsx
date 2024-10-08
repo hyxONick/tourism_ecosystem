@@ -1,5 +1,6 @@
+'use client';
 import styles from "./hotelDetailPage.module.scss";
-import React, { FC } from "react";
+import React, { FC, useEffect, useState } from "react";
 import { IoBan } from "react-icons/io5";
 import { BiSprayCan } from "react-icons/bi";
 import { MdMobileFriendly } from "react-icons/md";
@@ -8,16 +9,19 @@ import { GoDotFill } from "react-icons/go";
 import MapComponent from "@/Components/Map/map";
 import axios from "axios";
 import { IRoom } from "@/contracts/room";
+import { apiService } from "@/utils/api";
 
-const Details: FC<any> = async ({ params }) => {
+const Details: FC<any> = ({ params }) => {
   const { id } = params;
+  const [res, useRes] = useState<any>(null)
 
-  const res = await axios.get(
-    `http://localhost:8093/roominfo/getroominfo/${id}`
-  );
-  if (res.status !== 200) return null;
-  const detail = res.data as IRoom;
-
+  useEffect(() => {
+    apiService.roomInfo.getById(id).then(useRes);
+  } , []);
+  console.log('res',res)
+  if (!res) return null;
+  const detail = (res || {}) as IRoom;
+  
   const position: [number, number] = [-33.8568, 151.2153];
   const markerText = "Thames River";
   return (

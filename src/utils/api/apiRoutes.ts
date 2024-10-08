@@ -46,12 +46,12 @@ export interface ApiRoute {
     accommodation: {
       booking: {
         book: { method: 'post', endpoint: '/book' } as ApiRoute,
-        getById: { method: 'get', endpoint: '/getbooking/{id}' } as ApiRoute,
+        getById: { method: 'get', endpoint: '/getBooking/{id}' } as ApiRoute,
         delete: { method: 'post', endpoint: '/delete/{id}' } as ApiRoute,
       },
       roomInfo: {
         fetchAll: { method: 'get', endpoint: '/fetch' } as ApiRoute,
-        getById: { method: 'get', endpoint: '/getroominfo/{id}' } as ApiRoute,
+        getById: { method: 'get', endpoint: '/getroomInfo/{id}' } as ApiRoute,
         create: { method: 'post', endpoint: '/create' } as ApiRoute,
         update: { method: 'post', endpoint: '/update/{id}' } as ApiRoute,
         delete: { method: 'post', endpoint: '/delete/{id}' } as ApiRoute,

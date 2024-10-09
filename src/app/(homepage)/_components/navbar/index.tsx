@@ -17,6 +17,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   const [menuOpen, setMenuOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false); // State to track login status
   const [username, setUsername] = useState(""); // State to hold username
+  const role = JSON.parse(localStorage.getItem('userInfo') || '{}').role;
 
   const handleMenuToggle = () => {
     setMenuOpen(!menuOpen);
@@ -49,9 +50,14 @@ export const Navbar: React.FC<NavbarProps> = ({
       <div className={styles.wrapper} style={{ color: linkColor }}>
         <Link href={"/"}>Home</Link>
         <Link href="/scenarioPage">Scenarios</Link>
+        {!Number.isNaN(role) && role == 0 && (
+            <Link href="/scenarioCreate">Create Scenario</Link>
+          )}
         <Link href={"/About Us"}>About Us</Link>
         <Link href={"/hotelPage"}>Room Booking</Link>
-
+        {!Number.isNaN(role) && role == 0 && (
+            <Link href="/hotelCreate">Create Room</Link>
+          )}
         {isLoggedIn ? (
           <Link href={"/profile"}>
             <div className={styles.userProfile}>

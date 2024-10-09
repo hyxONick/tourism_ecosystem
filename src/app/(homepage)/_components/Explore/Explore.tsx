@@ -1,9 +1,10 @@
 "use client";
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect } from "react";
 import styles from "./Explore.module.scss";
 import useSWR from "swr";
 import { fetcher } from "@/utils/fetcher";
 import dayjs from "dayjs";
+import { apiService } from "@/utils/api";
 
 export const Explore = () => {
   const data = [
@@ -39,10 +40,15 @@ export const Explore = () => {
     return data[selectedIndex];
   }, [selectedIndex]);
 
-  const { data: weather, isLoading } = useSWR(
-    `http://localhost:8090/Weather/WeatherInfo/${selectedCity.name}`,
-    fetcher
-  );
+  const [weather, useWeatherData] = useState<any>([])
+
+  useEffect(() => {
+    apiService.weatherInfo.fetchCity(selectedCity.name).then(useWeatherData)
+  } , [selectedIndex]);
+  // const { data: weather, isLoading } = useSWR(
+  //   `http://localhost:8090/Weather/WeatherInfo/${selectedCity.name}`,
+  //   fetcher
+  // );
 
   // if (isLoading) return null;
 
@@ -82,19 +88,17 @@ export const Explore = () => {
           </div>
 
           <div className={styles.tag}>
-            {!isLoading && (
               <div>
                 <div style={{ display: "flex", alignItems: "center" }}>
-                  <img
-                    src={weather.conditionIcon}
-                    alt=""
-                    style={{ width: 50, height: 50 }}
-                  />
-                  <p>Tempature: {weather.tempC}</p>
+                    <img
+                      src={weather.conditionIcon}
+                      alt=""
+                      style={{ width: 50, height: 50 }}
+                    />
+                    <p>Tempature: {weather.tempC}</p>
+                  </div>
+                  <p>{dayjs(weather.localtime).format("DD/MM/YYYY HH:mm")}</p>
                 </div>
-                <p>{dayjs(weather.localtime).format("DD/MM/YYYY HH:mm")}</p>
-              </div>
-            )}
           </div>
         </div>
       </div>

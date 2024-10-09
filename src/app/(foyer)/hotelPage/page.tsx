@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { SearchBar } from "@/app/(homepage)/_components/SearchBar/SearchBar";
 import styles from "./HotelPage.module.scss";
 import { RoomCard } from "@/app/(homepage)/_components/roomCard/roomCard";
@@ -7,6 +7,7 @@ import { Pagination } from "antd";
 import useSWR from "swr";
 import { fetcher } from "@/utils/fetcher";
 import { IRoom } from "@/contracts/room";
+import { apiService } from "@/utils/api";
 
 const HotelPage = () => {
   // const RoomCardData = [
@@ -107,15 +108,19 @@ const HotelPage = () => {
   //     sleeps: 2,
   //   },
   // ];
+  const [rooms, useRoomData] = useState<any>([])
 
-  const { data: rooms, isLoading } = useSWR(
-    "http://localhost:8090/accommodation/roominfo/fetch",
-    fetcher
-  );
+  useEffect(() => {
+    apiService.roomInfo.fetchAll().then(useRoomData);
+  } , []);
+  // const { data: rooms, isLoading } = useSWR(
+  //   "http://localhost:8090/accommodation/roominfo/fetch",
+  //   fetcher
+  // );
 
   const [currentPage, setCurrentPage] = useState(1);
 
-  if (isLoading) return null;
+  // if (isLoading) return null;
   const pageSize = 6;
 
   const startIndex = (currentPage - 1) * pageSize;

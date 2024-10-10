@@ -23,7 +23,7 @@ const getBase64 = (img: FileType): Promise<string> => {
 };
 
 const scenarioPage = () => {
-  const [visibleItems, setVisibleItems] = useState(3); // 初始显示3条数据
+  const [visibleItems, setVisibleItems] = useState(3);
   const [sortOption, setSortOption] = useState("price-high-to-low");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editingItem, setEditingItem] = useState<any>(null);
@@ -39,7 +39,6 @@ const scenarioPage = () => {
   } , []);
 
   useEffect(() => {
-    console.log('file.originFileObj1')
     if (!file || !file.originFileObj) return;
     console.log('file.originFileObj', file.originFileObj)
     getBase64(file.originFileObj as FileType).then(setBase64);

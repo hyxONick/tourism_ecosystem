@@ -7,18 +7,41 @@ import { MdMobileFriendly } from "react-icons/md";
 import { MdOutlineQuickreply } from "react-icons/md";
 import { GoDotFill } from "react-icons/go";
 import MapComponent from "@/Components/Map/map";
-import axios from "axios";
 import { IRoom } from "@/contracts/room";
 import { apiService } from "@/utils/api";
+import {Button, message} from "antd";
+import { useRouter } from "next/navigation";
 
 const Details: FC<any> = ({ params }) => {
   const { id } = params;
   const [res, useRes] = useState<any>(null)
+  const router = useRouter();
 
   useEffect(() => {
     apiService.roomInfo.getById(id).then(useRes);
   } , []);
-  console.log('res',res)
+
+  const handleBooking = async ({ roomId, price }: { roomId: number; price: number }) => {
+    try {
+      if (localStorage.getItem('userId') && localStorage.getItem('token')) {
+        const bookingRes = await apiService.booking.book({
+          roomId: roomId,
+          guestId: localStorage.getItem('userId'),
+          checkInDate: new Date().toISOString(),
+          checkOutDate: new Date(new Date().setDate(new Date().getDate() + 1)).toISOString(),
+          amount: price,
+        })
+        if (bookingRes.id) {
+          message.success("Booking successfully!");
+        }
+      } else {
+        message.error("You are not logged in, please log in first.");
+        router.replace('/login');
+      }
+    } catch {
+        message.error("handleBooking Fail!");
+    }
+  }
   if (!res) return null;
   const detail = (res || {}) as IRoom;
   
@@ -85,6 +108,9 @@ const Details: FC<any> = ({ params }) => {
           <div className={styles["total"]}>
             <div>Subtotal</div>
             <div className={styles["amount"]}>{detail.price}</div>
+            <button className={styles["main-button"]} onClick={() => handleBooking({roomId: detail.id, price: detail.price})}>
+                  Booking Now
+            </button>
           </div>
         </div>
       </div>

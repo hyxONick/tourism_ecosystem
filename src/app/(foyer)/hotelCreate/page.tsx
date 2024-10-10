@@ -101,6 +101,14 @@ const RoomForm = () => {
         </Form.Item>
 
         <Form.Item
+          label="Address"
+          name="address"
+          rules={[{ required: true, message: "Please input the address!" }]}
+        >
+          <Input />
+        </Form.Item>
+
+        <Form.Item
           label="Description"
           name="description"
           rules={[{ required: true, message: "Please input the description!" }]}

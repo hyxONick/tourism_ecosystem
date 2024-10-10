@@ -26,6 +26,23 @@
     .title {
       font-size: 20px;
       font-weight: 400;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .editDelete {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #858585;
+      gap: 0;
+      font-size: 16px;
+    }
+    .iconContainer {
+      display: flex;  
+      align-items: center;
+      justify-content: flex-end;
+      gap: 10px;
     }
     .location {
       display: flex;

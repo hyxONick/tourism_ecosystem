@@ -53,7 +53,7 @@
 
   .booking {
     width: 370px;
-    height: 465px;
+    height: 115%;
     border: 1px;
     border: 1px solid rgba(255, 255, 255, 0.5);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -103,6 +103,20 @@
         font-size: 36px;
         font-weight: 900;
         color: rgba(123, 188, 176, 1);
+      }
+    }
+    .main-button {
+      width: 100%;
+      max-width: 200px;
+      height: 50px;
+      background-color: #ffda32;
+      border-radius: 40px;
+      border: none;
+      transition: box-shadow 0.3s ease;
+      font-weight: 600;
+    
+      &:hover {
+        box-shadow: 0 0 15px 5px rgba(255, 218, 50, 0.6);
       }
     }
   }

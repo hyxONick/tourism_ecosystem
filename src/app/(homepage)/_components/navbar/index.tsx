@@ -53,7 +53,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         {!Number.isNaN(role) && role == 0 && (
             <Link href="/scenarioCreate">Create Scenario</Link>
           )}
-        <Link href={"/About Us"}>About Us</Link>
+        <Link href={"/about"}>About Us</Link>
         <Link href={"/hotelPage"}>Room Booking</Link>
         {!Number.isNaN(role) && role == 0 && (
             <Link href="/hotelCreate">Create Room</Link>

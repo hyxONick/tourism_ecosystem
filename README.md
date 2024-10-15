@@ -29,7 +29,7 @@ The **Tourism Ecosystem** is designed to provide tourists with rich information 
 
 Before running the project locally, make sure you have the following installed:
 
-- Node.js (v16 or later)
+- Node.js (v18 or later)
 - npm or yarn
 
 ### Installation
